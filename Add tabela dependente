@@ -1,0 +1,21 @@
+source c:\temp\001-script.sql               #inserindo meu arquivo script001
+
+show tables;
+desc departamento;
+insert into departamento (nome) values ('RH')
+select * from departamento;
+insert into departamento (nome) values ('Financeiro'), ('Vendas')
+
+
+
+
+# criando a tabela
+
+CREATE TABLE dependente (
+  codigo INT AUTO_INCREMENT PRIMARY KEY,
+  nome VARCHAR(100) NOT NULL,
+  grau ENUM('filho', 'filha', 'esposo', 'esposa'),
+  funcionario INT,
+  CONSTRAINT fk_dependente_codigo
+  FOREIGN KEY (funcionario) REFERENCES funcionario(codigo)
+);
